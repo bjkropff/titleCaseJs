@@ -1,21 +1,17 @@
 describe("titleCase", function() {
-  it("capitalizes the first letter of the word", function() {
-      expect(titleCase1("cat")).to.equal("Cat");
+  it("makes every letter lower case", function() {
+    expect(titleCase("The cat went to PETCO")).to.equal("the cat went to petco");
   });
 
-  it("makes all letters of the word lowercase, except for the first", function() {
-      expect(titleCase1("CAT")).to.equal("Cat");
+  it("makes the first letter of every word capitalized", function() {
+    expect(titleCase2("The cat went to PETCO")).to.equal("The Cat Went To Petco");
   });
 
-  it("takes a mix of uppercase and lowercase letters and return the word in titlecase", function() {
-      expect(titleCase1("KittyCat")).to.equal("Kittycat");
+  it("will exclude special words from capitalization", function() {
+    expect(titleCase3("The cat went to PETCO")).to.equal("The Cat Went to Petco");
   });
 
-  it("takes multiple words and returns each into titlecase", function() {
-      expect(titleCase1("Meat bALL1")).to.equal("Meat Ball1");
-  });
-
-  it("will treat specific words as all lower case", function() {
-      expect(titleCase1("The Meat OR BAll AnD 2")).to.equal("The Meat or Ball and 2");
+  it("will exclude multiple specific words form capitalization", function() {
+    expect(titleCase4("The cat went to the PETCO on 42nd")).to.equal("the Cat Went to the Petco on 42nd");
   });
 });
