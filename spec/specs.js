@@ -10,4 +10,8 @@ describe("titleCase", function() {
     it("takes a mix of uppercase and lowercase letters and return the word in titlecase", function() {
         expect(titleCase1("KittyCat")).to.equal("Kittycat");
     })
+
+    it("takes multiple words and returns each into titlecase", function() {
+        expect(titleCase1("Meat bALL1")).to.equal("Meat Ball1");
+    })
 });

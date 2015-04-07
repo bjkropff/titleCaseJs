@@ -1,11 +1,16 @@
-function titleCase1(word) {
+function titleCase1(word_entered) {
     // var new_word = word[0].toUpperCase() + word.slice(1);
-    word = word.replace(word[0], word[0].toUpperCase());
-    var i = 1;
-    var j = 2;
-    while(i<(word.length)) {
-        word = word.replace(word[i], word[i].toLowerCase());
-        i++;
+    var array = word_entered.split(" ");
+    for (var j = 0, len = array.length; j < len; j++) {
+        var word = array[j];
+        word = word.replace(word[0], word[0].toUpperCase());
+        var i = 1;
+        while(i<(word.length)) {
+            word = word.replace(word[i], word[i].toLowerCase());
+            i++;
+        }
+        array[j] = word;
     }
-    return word;
+    var results = array.join(" ");
+    return results;
 }
